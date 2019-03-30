@@ -1,0 +1,35 @@
+I0329 14:26:46.737828   309 caffe.cpp:211] Use CPU.
+I0329 14:26:46.738178   309 solver.cpp:44] Initializing solver from parameters: 
+test_iter: 1000
+test_interval: 1000
+base_lr: 0.01
+display: 100
+max_iter: 50000
+lr_policy: "inv"
+gamma: 0.0001
+power: 0.75
+momentum: 0.9
+weight_decay: 0
+snapshot: 10000
+snapshot_prefix: "examples/siamese/model02/snapshot/mnist_siamese"
+solver_mode: CPU
+net: "examples/siamese/model02/mnist_siamese_train_test.prototxt"
+train_state {
+  level: 0
+  stage: ""
+}
+F0329 14:26:46.738318   309 solver.cpp:431] Cannot write to snapshot prefix 'examples/siamese/model02/snapshot/mnist_siamese'.  Make sure that the directory exists and is writeable.
+*** Check failure stack trace: ***
+    @     0x7f034870c5cd  google::LogMessage::Fail()
+    @     0x7f034870e433  google::LogMessage::SendToLog()
+    @     0x7f034870c15b  google::LogMessage::Flush()
+    @     0x7f034870ee1e  google::LogMessageFatal::~LogMessageFatal()
+    @     0x7f0348c5db6d  caffe::Solver<>::CheckSnapshotWritePermissions()
+    @     0x7f0348c61ed2  caffe::Solver<>::Init()
+    @     0x7f0348c6220f  caffe::Solver<>::Solver()
+    @     0x7f0348c502a1  caffe::Creator_SGDSolver<>()
+    @           0x40b791  train()
+    @           0x4080f0  main
+    @     0x7f034765e830  __libc_start_main
+    @           0x408919  _start
+    @              (nil)  (unknown)
